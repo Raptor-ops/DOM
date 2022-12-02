@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="fistTask">
+    <input type="text" id="age">
+    <button  onclick="showYourAge()">Введите свой возраст</button>
+    <script>
+        function showYourAge() {
+            let number = parseInt(document.querySelector("#age").value)
+          if (number >= 18) {
+            alert("Вы нам подходите")
+          } else if (number < 18) {
+            alert("Вы нам не подходите")
+          } else {
+            alert("Введите число")
+          }
+        }
+    </script>
+
+    </div>
+    <div class="secondTask">
+    <input type="text" id="width">
+    <input type="text" id="height">
+    <button onclick="getRectangle()">Вывод значений прямоугольника</button>
+    <button id="clear" onclick="clearResult()">Очистить значения</button>
+    <script>
+      function getRectangle() {
+        let width = document.getElementById("width").value;
+        let height = document.getElementById("height").value;
+        let area = width * height;
+        let perimeter = 2 * (width + height);
+        let diagonal = Math.sqrt(Math.pow(width, 2) + Math.pow(height, 2));
+        let result1 = document.querySelector("#result")
+        result1.innerHTML = area + ";" + "  " + perimeter + ";" + "  " + diagonal + "."
+        return result1;
+
+      }
+
+      function clearResult() {
+        document.querySelector('#result').innerHTML = '';
+        document.querySelector('#height').value = '';
+        document.querySelector('#width').value = ''
+      }
+
+    </script>
+    <p id="result">Результат вычислений</p>
+    </div>
+</body>
+</html>
